@@ -8,11 +8,11 @@
 -- If the table already exists, your script should not fail
 -- Your script can be executed on any database
 
-
+-- Creates a table with unique users.
 DROP TABLE IF EXISTS users;
 CREATE TABLE users (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     email VARCHAR(255) NOT NULL UNIQUE,
     name VARCHAR(255),
-    country CHAR(2), NOT NULL DEFAULT 'US' CHECK (country IN ('US', 'CO', 'TN'))
+    country CHAR(2) NOT NULL DEFAULT 'US' CHECK (country IN ('US', 'CO', 'TN'))
 );
